@@ -6,8 +6,21 @@ describe DockingStation do
   #it { expect(subject.release_bike).to be_an_instance_of Bike}
 
   it 'docking station return a bike, which is working'do
-    bike = subject.release_bike
-    expect(bike.working?).to be true
+    bike1 = Bike.new
+    subject.dock(bike1)
+    bike2 = subject.release_bike
+    expect(bike2).to eq bike1
+
+  end
+
+  it 'bike responds to working and returns true' do
+    bike = Bike.new
+    expect(bike).to be_working
+  end
+
+  it "return an error message is docked_bikes is nil" do
+    subject.dock(nil)
+    expect {subject.release_bike}.to raise_error("Sorry, no bikes left!") #if subject.docked_bikes == nil
   end
 
   it {is_expected.to respond_to :dock} # should have a dock method
