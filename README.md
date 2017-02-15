@@ -1,3 +1,15 @@
-# boris_bikes
-Week 1 challenge
-An app to simulate the operation, docking, tracking etc of boris bikes in London
+### Boris-Bikes Maker's Challenge Week 1
+
+Learning to use test-driven approach to create object-oriented code.
+
+### Technologies Used
+- Rspec
+- Ruby
+
+### Behaviors Learnt
+- [BDD](https://github.com/makersacademy/course/blob/master/pills/bdd_cycle.md)
+- [Pair-Programing](https://github.com/makersacademy/course/blob/master/pills/pairing.md)
+
+### Contributors
+- Joe Maidman
+- Ashwini Mani
