@@ -18,7 +18,7 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
-  it "return an error message is docked_bikes is nil" do
+  it "return an error message if dock is nil" do
     subject.dock(nil)
     expect {subject.release_bike}.to raise_error("Sorry, no bikes left!") #if subject.docked_bikes == nil
   end
@@ -29,6 +29,12 @@ describe DockingStation do
     bike = Bike.new
     expect(subject.dock(bike)).to eq bike
     allow(subject).to receive(:dock).with(an_instance_of(Bike)) {raise "station not receiving a Bike object"}
+  end
+
+  it "return an error message if dock is full" do
+    bike = Bike.new
+    subject.dock(bike)
+    expect {subject.dock(bike)}.to raise_error("Sorry, no space left!") #if subject.docked_bikes == nil
   end
 
   it {is_expected.to respond_to :docked_bikes}

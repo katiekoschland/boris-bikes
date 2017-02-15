@@ -8,6 +8,7 @@ class DockingStation
   end
 
   def dock(bike)
+    return raise "Sorry, no space left!" if docked_bikes
     @docked_bikes = bike
   end
 
