@@ -12,12 +12,12 @@ describe DockingStation do
     expect(bike2).to eq bike1
 
   end
-
+=begin
   it 'bike responds to working and returns true' do
     bike = Bike.new
     expect(bike).to be_working
   end
-
+=end
   it "return an error message if dock is nil" do
     subject.dock(nil)
     expect {subject.release_bike}.to raise_error("Sorry, no bikes left!") #if subject.docked_bikes == nil
