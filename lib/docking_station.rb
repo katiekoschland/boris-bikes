@@ -29,6 +29,8 @@ class DockingStation
     docked_bike
   end
 
+  #hello
+
   private
   def full?
    @docked_bikes.length >= DEFAULT_CAPACITY
