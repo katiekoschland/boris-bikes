@@ -5,7 +5,7 @@ describe DockingStation do
 
   #it { expect(subject.release_bike).to be_an_instance_of Bike}
 
-  it 'docking station return a bike, which is working'do
+  it 'docking station return the same bike which was previously docked'do
     bike1 = Bike.new
     subject.dock(bike1)
     bike2 = subject.release_bike
@@ -19,8 +19,8 @@ describe DockingStation do
   end
 =end
   it "return an error message if dock is nil" do
-    subject.dock(nil)
-    expect {subject.release_bike}.to raise_error("Sorry, no bikes left!") #if subject.docked_bikes == nil
+
+    expect {subject.release_bike}.to raise_error("No bikes available") #if subject.docked_bikes == nil
   end
 
   it {is_expected.to respond_to :dock} # should have a dock method
@@ -32,15 +32,19 @@ describe DockingStation do
   end
 
   it "return an error message if dock is full" do
-    bike = Bike.new
-    subject.dock(bike)
-    expect {subject.dock(bike)}.to raise_error("Sorry, no space left!") #if subject.docked_bikes == nil
+    #bike = Bike.new
+    bike = 20.times {subject.dock(Bike.new)}
+
+    #subject.dock(bike)
+    expect {subject.dock(bike)}.to raise_error("Full capacity") #if subject.docked_bikes == nil
   end
 
   it {is_expected.to respond_to :docked_bikes}
-  it "docking station should return a bike when docked_bikes is called" do
-    bike = Bike.new
-    subject.dock(bike)
+
+  it "docking station should return all docked bikes when docked_bikes is called" do
+    bike = Array.new
+    20.times {bike.push(subject.dock(Bike.new))}
+
     expect(subject.docked_bikes).to eq bike
   end
 
