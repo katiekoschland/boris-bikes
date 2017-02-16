@@ -7,7 +7,7 @@ describe DockingStation do
   end
 
   it 'when capacity is not given, use default' do
-  expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
   # should have a release_bike method
