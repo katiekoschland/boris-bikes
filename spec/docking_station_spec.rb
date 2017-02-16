@@ -1,6 +1,19 @@
 require 'docking_station'
 
 describe DockingStation do
+
+  it 'docking station can be initialized with any capacity' do
+    allow(subject).to receive(:initialize).with(an_instance_of(Object))
+
+  end
+
+  it 'when capacity is not given, use default' do
+
+  expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+
+end
+
+
   it {is_expected.to respond_to :release_bike} # should have a release_bike method
 
   #it { expect(subject.release_bike).to be_an_instance_of Bike}
@@ -33,7 +46,7 @@ describe DockingStation do
 
   it "return an error message if dock is full" do
     #bike = Bike.new
-    bike = 20.times {subject.dock(Bike.new)}
+    bike = DockingStation::DEFAULT_CAPACITY.times {subject.dock(Bike.new)}
 
     #subject.dock(bike)
     expect {subject.dock(bike)}.to raise_error("Full capacity") #if subject.docked_bikes == nil
@@ -43,7 +56,7 @@ describe DockingStation do
 
   it "docking station should return all docked bikes when docked_bikes is called" do
     bike = Array.new
-    20.times {bike.push(subject.dock(Bike.new))}
+    DockingStation::DEFAULT_CAPACITY.times {bike.push(subject.dock(Bike.new))}
 
     expect(subject.docked_bikes).to eq bike
   end
