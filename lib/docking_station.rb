@@ -12,7 +12,6 @@ class DockingStation
   def release_bike
     #return docked_bikes unless docked_bikes.nil?
     #raise "Sorry, no bikes left!"
-
     fail "No bikes available" unless empty?
     @docked_bikes.last
   end
@@ -26,7 +25,7 @@ class DockingStation
   end
 
   def show_docked
-    docked_bike
+    docked_bikes
   end
 
   private
