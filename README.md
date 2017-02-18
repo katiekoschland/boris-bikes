@@ -12,4 +12,5 @@ Learning to use test-driven approach to create object-oriented code.
 
 ### Contributors
 - Joe Maidman
-- Ashwini Mani
+- Katie Koschland
+
