@@ -1,6 +1,6 @@
-### Boris-Bikes Maker's Challenge Week 1
+### Boris-Bikes Challenge (Week 1)
 
-Main Objectives
+### Main Objectives
 
 - Are you having fun?
 - Are you a better developer than you were yesterday?
@@ -52,6 +52,25 @@ I'd like docking stations not to release broken bikes.
 
 - git clone https://github.com/katiekoschland/boris-bikes.git
 - cd boris-bikes
+
+### Using irb to interact with the application
+```
+2.4.0 :001 > require './lib/bike.rb'
+ => true 
+2.4.0 :002 > require "./lib/docking_station.rb"
+ => true 
+2.4.0 :003 > docking_station = DockingStation.new
+ => #<DockingStation:0x007ff5c2814240 @capacity=20, @bikes=[]> 
+2.4.0 :004 > bike = Bike.new
+ => #<Bike:0x007ff5c280dbc0> 
+2.4.0 :005 > docking_station.dock(bike)
+ => [#<Bike:0x007ff5c280dbc0>] 
+2.4.0 :006 > docking_station.release_bike
+ => #<Bike:0x007ff5c280dbc0> 
+2.4.0 :007 > docking_station
+ => #<DockingStation:0x007ff5c2814240 @capacity=20, @bikes=[]> 
+2.4.0 :008 > 
+```
 
 ### Technologies Used
 - Rspec
