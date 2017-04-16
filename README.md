@@ -7,7 +7,7 @@ Are you a better developer than you were yesterday?
 Can you use test-driven approach to create object-oriented code.
 
 ### User Stories
-
+```
 As a person,
 So that I can use a bike,
 I'd like a docking station to release a bike.
@@ -47,7 +47,11 @@ I'd like to report a bike as broken when I return it.
 As a maintainer of the system,
 So that I can manage broken bikes and not disappoint users,
 I'd like docking stations not to release broken bikes.
+```
+### Installation instructions
 
+- git clone https://github.com/katiekoschland/boris-bikes.git
+- cd boris-bikes
 
 ### Technologies Used
 - Rspec
