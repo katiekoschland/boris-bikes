@@ -2,9 +2,9 @@
 
 Main Objectives
 
-Are you having fun?
-Are you a better developer than you were yesterday?
-Can you use test-driven approach to create object-oriented code.
+- Are you having fun?
+- Are you a better developer than you were yesterday?
+- Can you use test-driven approach to create object-oriented code.
 
 ### User Stories
 ```
